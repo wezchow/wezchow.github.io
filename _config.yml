@@ -7,6 +7,7 @@ title: $$\sum_{i=1}^n ideology_i=\infty$$
 description: > # this means to ignore newlines until "email:"
    一个老男孩的自留地
 
+head_title: wnono.com
 email: wesley@wnono.com
 #blog logo
 logo: "/assets/images/df_logo.jpg"
@@ -58,10 +59,10 @@ social:
     desc: Subscribe to my feed
 
 menu:
-  - title:  Home <- 主页
+  - title:  Home [主页]
     url:  /
 
-  - title:  About <- 关于
+  - title:  About [关于]
     url:  /about
 
 #  - icon:	google-plus

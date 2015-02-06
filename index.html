@@ -9,11 +9,12 @@ layout: default
 </div>
 
 <header class="blog-header">
+    <div id="RSSview" style='display:none;'></div>
     {% if site.logo %}
       <a class="blog-logo" href="{{site.url}}" style="background-image: url('{{ site.logo }}')"></a>
     {% endif %}
-    <h1 class="blog-title">{{ site.title }}</h1>
-    <h2 class="blog-description HaTian-SuiXing" style="font-size: 30px; margin-top: -20px;">{{ site.description }}</h2>
+    <h1 class="blog-title"></h1>
+    <h2 class="blog-description cjsyingbixingshu">{{ site.description }}</h2>
     <div class="custom-links">
       {% for social in site.social %}
         {% if social.url %}
@@ -23,10 +24,9 @@ layout: default
             &nbsp;&nbsp;·&nbsp;&nbsp;
         {% endif %}
       {% endfor %}
-      <a href="/about/">About</a>
+      <!--<a href="/about/">About</a>-->
     </div>
 </header>
-
 
 <main class="content" role="main">
 

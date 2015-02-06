@@ -42,15 +42,15 @@
       });
     }(jQuery));
 
-    function youziku46887() {
-        var resultStr = $(".HaTian-SuiXing").text();
+    function youziku19370() {
+        var resultStr = $(".cjsyingbixingshu").text();
         var md5 = "";
         resultStr = Trim(resultStr);
         resultStr = SelectWord(resultStr);
-        md5 = $.md5("df89382e0841428a99aed8534f629a38"+"HaTian-SuiXing" + resultStr);
-        $.getJSON("http://www.youziku.com/webfont/CSSPOST?jsoncallback=?", { "id": md5, "guid": "df89382e0841428a99aed8534f629a38", "type": "5" }, function (json) {
+        md5 = $.md5("1161ae0398654f06bfa22b033dfcf58c"+"cjsyingbixingshu" + resultStr);
+        $.getJSON("http://www.youziku.com/webfont/CSSPOST?jsoncallback=?", { "id": md5, "guid": "1161ae0398654f06bfa22b033dfcf58c", "type": "5" }, function (json) {
             if (json.result == 0) {/*alert("需要生成");*/
-                $.post("http://www.youziku.com/webfont/PostCorsCreateFont", { "name": "HaTian-SuiXing", "gid": "df89382e0841428a99aed8534f629a38", "type": "5", "text": resultStr }, function (json) {
+                $.post("http://www.youziku.com/webfont/PostCorsCreateFont", { "name": "cjsyingbixingshu", "gid": "1161ae0398654f06bfa22b033dfcf58c", "type": "5", "text": resultStr }, function (json) {
                     if (json == "0") { /*alert("参数不对");*/
                     } else if (json == "2") {/*alert("超过每日生成字体数的上限");*/
                     } else if (json == "3") { /*alert("当前正在生成请稍后");*/
@@ -59,7 +59,7 @@
                 });
             }
             else {/*alert("下载css文件");*/
-                loadExtentFile("http://www.youziku.com/webfont/css?id=" + md5 + "&guid=" + "df89382e0841428a99aed8534f629a38" + "&type=5");
+                loadExtentFile("http://www.youziku.com/webfont/css?id=" + md5 + "&guid=" + "1161ae0398654f06bfa22b033dfcf58c" + "&type=5");
             }
         });
     }
@@ -67,8 +67,27 @@
         if (window.location.href.toString().substring(0, 7) == "file://") {
             alert("你当前是通过双击打开html文件，进行本地测试的，这样看不到字体效果，一定要通过本地建立的虚拟网站或发布到外网进行测试。详见有字库的使用说明。");
         }else{
-            youziku46887();
+            youziku19370();
         }
-    })()
+    })();
+
+    (function PullBackground() {
+        var ajaxRequest = new XMLHttpRequest(), background = '';
+        ajaxRequest.open('POST', "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1", true);
+        ajaxRequest.setRequestHeader("Connection", "close");
+        ajaxRequest.send('');
+        ajaxRequest.onreadystatechange = function () {
+            if (ajaxRequest.readyState == 4) {
+                background = ajaxRequest.responseText;
+                var res = background.split("<url>");
+                var res1 = res[1].split("</url>");
+                background = res1[0];
+
+                document.getElementById('teaserimage').style.backgroundImage = "url('http://bing.com" + background + "')"
+                document.getElementById('teaserimage').style.backgroundSize = "100%";
+            }
+        }
+    })();
+
 </script>
 
