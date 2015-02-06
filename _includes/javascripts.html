@@ -1,39 +1,74 @@
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="http://www.youziku.com/UserDownFile/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.youziku.com/UserDownFile/jquery.md5.js"></script>
 <script type="text/javascript" src="{{ "/assets/js/jquery.fitvids.js" | prepend: site.baseurl  }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/index.js" | prepend: site.baseurl  }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/readingTime.min.js" | prepend: site.baseurl  }}"></script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
-(function ($) {
-  "use strict";
-  $(document).ready(function(){
-
-    var $window = $(window),
-    $image = $('.post-image-image, .teaserimage-image');
-    $window.on('scroll', function() {
-      var top = $window.scrollTop();
-
-      if (top < 0 || top > 1500) { return; }
-      $image
-        .css('transform', 'translate3d(0px, '+top/3+'px, 0px)')
-        .css('opacity', 1-Math.max(top/700, 0));
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
     });
-    $window.trigger('scroll');
 
-    var height = $('.article-image').height();
-    $('.post-content').css('padding-top', height + 'px');
+    (function ($) {
+      "use strict";
+      $(document).ready(function(){
 
-    $('a[href*=#]:not([href=#])').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-       && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html,body').animate({ scrollTop: target.offset().top }, 500);
-          return false;
+        var $window = $(window),
+        $image = $('.post-image-image, .teaserimage-image');
+        $window.on('scroll', function() {
+          var top = $window.scrollTop();
+
+          if (top < 0 || top > 1500) { return; }
+          $image
+            .css('transform', 'translate3d(0px, '+top/3+'px, 0px)')
+            .css('opacity', 1-Math.max(top/700, 0));
+        });
+        $window.trigger('scroll');
+
+        var height = $('.article-image').height();
+        $('.post-content').css('padding-top', height + 'px');
+
+        $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+           && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({ scrollTop: target.offset().top }, 500);
+              return false;
+            }
+          }
+        });
+      });
+    }(jQuery));
+
+    function youziku46887() {
+        var resultStr = $(".HaTian-SuiXing").text();
+        var md5 = "";
+        resultStr = Trim(resultStr);
+        resultStr = SelectWord(resultStr);
+        md5 = $.md5("df89382e0841428a99aed8534f629a38"+"HaTian-SuiXing" + resultStr);
+        $.getJSON("http://www.youziku.com/webfont/CSSPOST?jsoncallback=?", { "id": md5, "guid": "df89382e0841428a99aed8534f629a38", "type": "5" }, function (json) {
+            if (json.result == 0) {/*alert("需要生成");*/
+                $.post("http://www.youziku.com/webfont/PostCorsCreateFont", { "name": "HaTian-SuiXing", "gid": "df89382e0841428a99aed8534f629a38", "type": "5", "text": resultStr }, function (json) {
+                    if (json == "0") { /*alert("参数不对");*/
+                    } else if (json == "2") {/*alert("超过每日生成字体数的上限");*/
+                    } else if (json == "3") { /*alert("当前正在生成请稍后");*/
+                    } else {/*alert("正在生成");*/
+                    }
+                });
+            }
+            else {/*alert("下载css文件");*/
+                loadExtentFile("http://www.youziku.com/webfont/css?id=" + md5 + "&guid=" + "df89382e0841428a99aed8534f629a38" + "&type=5");
+            }
+        });
+    }
+    (function youziku() {
+        if (window.location.href.toString().substring(0, 7) == "file://") {
+            alert("你当前是通过双击打开html文件，进行本地测试的，这样看不到字体效果，一定要通过本地建立的虚拟网站或发布到外网进行测试。详见有字库的使用说明。");
+        }else{
+            youziku46887();
         }
-      }
-    });
-  });
-}(jQuery));
+    })()
 </script>
 
