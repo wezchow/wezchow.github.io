@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "Hola 2015"
+date:   2015-02-07 14:34:25
+categories: 无题
+tags: featured
+image: http://cn.bing.com/az/hprichbg/rb//DutchAntilles_ZH-CN12528903491_1366x768.jpg
+---
+
+# Hola 2015
+<br/>
+从 MySpace 时代起，就不止一次把玩过各种空间博客，始终对任何服务提供商的产品嗤之以鼻，一成不变，
+恶心的又局限的主题选择范围，各种麻烦的输入限制。本人崇尚 DIY, 自己配过　Durpal, wordpress,
+功能强大到从来不会去用，真是很讽刺。最近重新拾起码农身份，偶偶然在 github 发现了一个叫 Pages
+的东东，好奇心使然就发现了这片小天地。Github Pages + Jekyll 虽为静态的东西，但小而灵动，简洁却不简单。
+
+
+TBD
+
+
+
