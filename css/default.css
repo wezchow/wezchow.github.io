@@ -1,0 +1,140 @@
+.menu a:hover {
+	-webkit-opacity: 0.75;
+	opacity: 0.75;
+}
+
+.menu {
+	display: block;
+	cursor: pointer;
+	background-color: rgba(26, 26, 26, 0.35);
+	width: 30px;
+	height: 30px;
+	top: 12px;
+	left: 12px;
+	padding-top: 5px;
+	padding-left: 5px;
+	z-index: 6;
+	transition-duration: .5s;
+}
+
+.menu-content > .social-links-menu {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.menu-content hr {
+	margin: 15px 0;
+	border-top: 1px solid rgb(131, 131, 131);
+	border-bottom: 0px;
+}
+
+.menu-content {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: rgba(26, 26, 26, 1);
+	text-align: center;
+	z-index: 5;
+}
+
+.menu-content a {
+	text-transform: uppercase;
+	-moz-osx-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+
+	letter-spacing: 1.2pt;
+	font-size: 12px;
+	font-weight: 600;
+	font-style: normal;
+	line-height: 35px;
+	display: block;
+	color: gray;
+}
+
+.menu-content a:hover {
+	color: #fff;
+}
+
+.menu span {
+	color: #eee;
+	font-size: 16px;
+	height: 20px;
+	width: 20px;
+	opacity: 1;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+.menu + input {
+	display: none;
+}
+
+.menu + input + * {
+	display: none;
+}
+
+.menu + input:checked + * {
+	display: block;
+}
+
+.menu {
+	position: fixed;
+}
+
+.menu:hover, .menu:active  {
+	background-color: #1a1a1a;
+}
+
+.menu-content {
+	width: 125px;
+	top: 47px;
+	left: 12px;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	padding-left: 20px;
+	padding-right: 20px;
+	position: fixed;
+}
+
+.menu-title {
+	display: none;
+}
+
+.social-links {
+	width: auto;
+	top: 20px;
+	right: 20px;
+	position: absolute;
+	z-index: 2;
+}
+
+.social-links a {
+	opacity: 0.75;
+	text-decoration: none;
+	display: inline-block;
+	margin: 0 5px 0 5px;
+	padding: 0;
+	color: #eee;
+}
+.social-links a span {
+	font-size: 24px;
+	height: 24px;
+	width: 24px;
+}
+
+.social-links a:hover {
+	opacity: 1;
+}
+
+header a, footer a {
+	transition-duration: .25s;
+	text-decoration: none;
+	transition-property: width, height, background-size, margin, opacity;
+}
+
+hr {
+	position: relative;
+	margin: 1.5rem 0;
+	border: 0;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #fff;
+}
