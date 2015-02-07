@@ -87,6 +87,11 @@
             </footer>
           </div>
         </div>
+          {% if site.commentsystem %}
+          <div id="comments">
+              {% include comments.html %}
+          </div>
+          {% endif %}
       </article>
     </main>
     <div class="bottom-closer">
