@@ -15,7 +15,9 @@ logo: "/assets/images/df_logo.jpg"
 cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
 
 name: 'Wesley Chow'
+name_cn: '周凌'
 author: 'Wesley Chow'
+author_cn: '周凌'
 author_image: "/assets/images/author_me.jpg"
 
 paginate:	5

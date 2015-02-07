@@ -14,14 +14,17 @@ layout: default
       <a class="blog-logo" href="{{site.url}}" style="background-image: url('{{ site.logo }}')"></a>
     {% endif %}
     <h1 class="blog-title"></h1>
-    <h2 class="blog-description cjsyingbixingshu" style="color: #0056ca">{{ site.description }}</h2>
+    <h2 class="blog-description cjsyingbixingshu" style="color: #000">{{ site.description }}</h2>
     <div class="custom-links">
       {% for social in site.social %}
         {% if social.url %}
             <a class="icon-{{ social.icon }}" href="{{ social.url }}">
                 <span class="genericon genericon-{{ social.icon }}"></span>
             </a>
-            &nbsp;&nbsp;·&nbsp;&nbsp;
+            {% if forloop.last %}
+            {% else %}
+                &nbsp;&nbsp;·&nbsp;&nbsp;
+            {% endif %}
         {% endif %}
       {% endfor %}
       <!--<a href="/about/">About</a>-->

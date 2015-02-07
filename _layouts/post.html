@@ -45,7 +45,7 @@
         {% endif %}
         <section class="post-content">
           <div class="post-reading">
-            <span class="post-reading-time"></span> read
+            阅读本文可能会占用您<span class="post-reading-time"></span>
           </div>
           <a name="topofpage"></a>
           {{content}}
@@ -68,6 +68,7 @@
             <section class="author">
               <div class="author-image" style="background-image: url({{site.author_image}})">Blog Logo</div>
               <h4>{{ site.author }}</h4>
+                <h4 class="cjsyingbixingshu" style="font-size: 26px; font-weight: normal; color: #999;">{{ site.author_cn }}</h4>
               <p class="bio">{{author.bio}}</p>
               <hr>
               <p class="published">Published <time datetime="{{ page.date | date: "%F %R" }}">{{ page.date | date_to_string }}</time></p>
@@ -78,7 +79,8 @@
             <h5 class="index-headline featured"><span>Supported by</span></h5>
             <footer class="site-footer">
               <section class="poweredby">Proudly published with <a href="http://jekyllrb.com"> Jekyll</a></section>
-              <a class="subscribe" href="{{ "/feed.xml" | prepend: site.baseurl }}"> <span class="tooltip"> <i class="fa fa-rss"></i> You should subscribe to my feed.</span></a>
+              <a class="subscribe" href="{{ "/feed.xml" | prepend: site.baseurl }}"> <span class="tooltip"  style="font-size: 12px;"> <i class="fa fa-rss"></i>
+                {订阅我咩}.</span></a>
               <div class="inner">
                 <section class="copyright">All content copyright <a href="{{@blog.url}}/">{{site.author}}</a> &copy; {{ site.time | date: '%Y' }}<br>All rights reserved.</section>
               </div>
