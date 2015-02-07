@@ -62,7 +62,13 @@ menu:
   - title:  Home [主页]
     url:  /
 
-  - title:  About [关于]
+  - title: Blog [博客]
+    url: /blog
+
+  - title: Work [作品]
+    url: /portfolio
+
+  - title:  Me [我]
     url:  /about
 
 #  - icon:	google-plus
@@ -71,3 +77,6 @@ menu:
 #    share_url:
 #    share_title:
 #    share_link:
+
+# Google Analytics (add the UA Code, e.g.: UA-xxxxxxxx-1)
+google_analytics: UA-59478649-1
