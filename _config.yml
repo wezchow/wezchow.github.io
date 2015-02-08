@@ -26,8 +26,8 @@ url: "http://wnono.com" # the base hostname & protocol for your site
 baseurl: ""
 
 #Comments System Setting
-commentsystem: disqus
-disqus: wnono
+#commentsystem: disqus
+#disqus: wnono
 
 # social icons and sharing options
 social:
@@ -72,7 +72,7 @@ menu:
     url: /blog
 
   - title: Work [作品]
-    url: /portfolio
+    url: /work
 
   - title:  Me [我]
     url:  /about

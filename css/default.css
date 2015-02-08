@@ -142,3 +142,15 @@ hr {
 #disqus_thread .comment-count {
     font-weight: normal
 }
+
+.post .post-content a {
+    border-bottom: 2px dotted #fff;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+}
+
+.post .post-content a:hover {
+    border-bottom: 2px dotted #2a7ead;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+}
