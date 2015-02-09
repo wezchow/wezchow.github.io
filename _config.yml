@@ -86,3 +86,6 @@ menu:
 
 # Google Analytics (add the UA Code, e.g.: UA-xxxxxxxx-1)
 google_analytics: UA-59478649-1
+
+gems:
+  - jekyll-sitemap
