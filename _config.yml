@@ -25,9 +25,9 @@ paginate:	5
 url: "http://wnono.com" # the base hostname & protocol for your site
 baseurl: ""
 
-#Comments System Setting
-#commentsystem: disqus
-#disqus: wnono
+# Comments System Setting
+commentsystem: disqus
+disqus: wnono
 
 # social icons and sharing options
 social:
