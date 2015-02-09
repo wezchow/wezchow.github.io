@@ -75,10 +75,8 @@
     })();
 
     $(document).ready(function() {
-        if ($('bingBG').style != undefined) {
-            bingBgURL = bingBgJSON.images[0].url;
-            $('bingBG').style.backgroundImage = "url('" + bingBgURL + "')";
-        }
+        bingBgURL = bingBgJSON.images[0].url;
+        $('bingBG').style.backgroundImage = "url('" + bingBgURL + "')";
 
         $('div.teaserimage-image').lazyload({
             effect : "fadeIn"
