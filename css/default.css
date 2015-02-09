@@ -13,7 +13,7 @@
 	left: 12px;
 	padding-top: 5px;
 	padding-left: 5px;
-	z-index: 6;
+	z-index: 9999;
 	transition-duration: .5s;
 }
 
@@ -32,7 +32,7 @@
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	background-color: rgba(26, 26, 26, 1);
 	text-align: center;
-	z-index: 5;
+	z-index: 9998;
 }
 
 .menu-content a {
