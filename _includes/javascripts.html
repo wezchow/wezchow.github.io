@@ -15,6 +15,13 @@
       "use strict";
       $(document).ready(function(){
 
+          var bingBgURL = bingBgJSON.images[0].url;
+          $('#bingBG').css('background-image', 'url(' + bingBgURL + ')');
+
+          $('div.teaserimage-image').lazyload({
+              effect : "fadeIn"
+          });
+
         var $window = $(window),
         $image = $('.post-image-image, .teaserimage-image');
         $window.on('scroll', function() {
@@ -73,15 +80,6 @@
             youziku19370();
         }
     })();
-
-    $(document).ready(function() {
-        bingBgURL = bingBgJSON.images[0].url;
-        $('#bingBG').css('background-image', 'url(' + bingBgURL + ')');
-
-        $('div.teaserimage-image').lazyload({
-            effect : "fadeIn"
-        });
-    });
 
 </script>
 
