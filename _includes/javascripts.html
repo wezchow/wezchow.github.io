@@ -76,7 +76,7 @@
 
     $(document).ready(function() {
         bingBgURL = bingBgJSON.images[0].url;
-        $('bingBG').style.backgroundImage = "url('" + bingBgURL + "')";
+        $('#bingBG').css('background-image', 'url(' + bingBgURL + ')');
 
         $('div.teaserimage-image').lazyload({
             effect : "fadeIn"
