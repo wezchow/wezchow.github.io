@@ -3,6 +3,7 @@
 <script type="text/javascript" src="{{ "/assets/js/jquery.fitvids.js" | prepend: site.baseurl  }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/index.js" | prepend: site.baseurl  }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/readingTime.min.js" | prepend: site.baseurl  }}"></script>
+<script type="text/javascript" src="http://wsandbox.sinaapp.com/bingbg.json"></script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
     MathJax.Hub.Config({
@@ -63,6 +64,7 @@
             }
         });
     }
+
     (function youziku() {
         if (window.location.href.toString().substring(0, 7) == "file://") {
             alert("你当前是通过双击打开html文件，进行本地测试的，这样看不到字体效果，一定要通过本地建立的虚拟网站或发布到外网进行测试。详见有字库的使用说明。");
@@ -71,23 +73,10 @@
         }
     })();
 
-    (function PullBackground() {
-        var ajaxRequest = new XMLHttpRequest(), background = '';
-        ajaxRequest.open('POST', "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1", true);
-        ajaxRequest.setRequestHeader("Connection", "close");
-        ajaxRequest.send('');
-        ajaxRequest.onreadystatechange = function () {
-            if (ajaxRequest.readyState == 4) {
-                background = ajaxRequest.responseText;
-                var res = background.split("<url>");
-                var res1 = res[1].split("</url>");
-                background = res1[0];
-
-                document.getElementById('teaserimage').style.backgroundImage = "url('http://bing.com" + background + "')"
-                document.getElementById('teaserimage').style.backgroundSize = "100%";
-            }
-        }
-    })();
+    $(document).ready(function() {
+        bingBgURL = bingBGJSON.images[0].url;
+        document.getElementById('bingBG').style.backgroundImage = "url('" + bingBgURL + "')";
+    });
 
 </script>
 
