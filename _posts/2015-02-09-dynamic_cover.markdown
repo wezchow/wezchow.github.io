@@ -80,14 +80,14 @@ Bingo, 关键词是 Microframework, 但对于我的需求来讲已经是绰绰�
 {% endhighlight %}
 
 
-我说过分分钟搞定的吧，index.wsgi 文件是 SAE 的入口文件。需要利用他对我的实现实例化。好喽，通过 SVN 把代码上传到 SAE，可以测试了，等等，我先吐个槽，尼玛新浪能用高级点的 VCS 咩，弄个 Git 会死啊！清下嗓子回到正题，点下连接看结果：[http://wsandbox.sinaapp.com/bingbg.json](http://wsandbox.sinaapp.com/bingbg.json)
+我说过分分钟搞定的吧，index.wsgi 文件是 SAE 的入口文件。需要利用他对我的实现实例化。好喽，通过 SVN 把代码上传到 SAE，可以测试了，等等，我先吐个槽，尼玛新浪能用高级点的 VCS 咩，弄个 Git 会死啊！清下嗓子回到正题，点下连接看结果：[http://wsandbox.sinaapp.com/bingbg.js](http://wsandbox.sinaapp.com/bingbg.js)
 
 Job done!
 
 ## 3. 前端修改
 这边的修改就简单了，直接把原来显示图片背景的 CSS 注释掉，给 <div> 标签加上 id="bingBG"。然后在 JavaScript 引用区加上：
 {% highlight javascript%}
-<script type="text/javascript" src="http://wsandbox.sinaapp.com/bingbg.json"></script>
+<script type="text/javascript" src="http://wsandbox.sinaapp.com/bingbg.js"></script>
 <script>
     $(document).ready(function() {
             bingBgURL = bingBgJSON.images[0].url;
