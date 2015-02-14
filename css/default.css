@@ -115,6 +115,16 @@
 	padding: 0;
 	color: #eee;
 }
+
+.page .social-links a {
+    opacity: 0.75;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 5px 0 5px;
+    padding: 0;
+    color: #888;
+}
+
 .social-links a span {
 	font-size: 24px;
 	height: 24px;
