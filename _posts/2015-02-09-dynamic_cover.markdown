@@ -1,13 +1,12 @@
 ---
 layout: post
-title:  "让封面多彩一些"
+title:  "封面 - 多彩一些"
 date:   2015-02-09 14:34:25
 categories: Jekyll Python SAE
 tags:
 image: /assets/article_images/2014-11-30-mediator_features/night-track.JPG
 ---
 
-# 让封面多彩一些
 <br/>
 在配置这套 Jekyll 模板的过程中，始终对每篇博文需要制定封面图片感到有点点不知足。为什么我不能直接利用一些线上美图为己用呢？既然想到就开工吧。
 
@@ -17,7 +16,7 @@ TODO LIST：
 
 ## 1. 数据源
 又微又软的搜索引擎好用不好用不在这里讨论，老夫就是看上你们家背景图了！嘿嘿... 哟西，要想个办法借(tou)过来。有事儿就得找谷大爷啊，果然 <a href="http://stackoverflow.com/questions/10639914/is-there-a-way-to-get-bings-photo-of-the-day" target="_blank">Stackoverflow</a> 上跟老夫一般对人家背景图流口水的也早已有之，神马XML, JSON, RSS，要啥有啥，下面贴上我拿到的 JSON 结构，省略了一些噪音，只看主要部分。
-{% highlight js %}
+{% highlight json %}
 {
     "images": [{
         "startdate": "20150208",
