@@ -137,7 +137,7 @@ Cron Job 在 SAE 的实现还是很容易滴，先配置一下 config.yaml。
                              image['msg'][0]['text'], 'bing.com', image['fullstartdate'], json_string)
 
         insert_new_record(new_record)
-        return
+        return '200'
 
 
     # Insert new record
