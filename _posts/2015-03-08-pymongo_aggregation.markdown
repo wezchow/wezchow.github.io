@@ -54,4 +54,91 @@ ObjectId('...')
 >这里可以跳转到完整的 [MongoDB's aggregation framework 帮助文档](http://docs.mongodb.org/manual/applications/aggregation)
 
 # Map/Reduce
-TODO
+实现聚合操作的另一个选择是使用 map reduce 框架。这里我们将定义 map 和 reduce 函数同样实现对集合中 tags 数组的标签进行统计。
+
+我们的 map 函数只是针对数组中每一个标签，简单的弹射一个 (key, 1) 结构的键值对。
+
+{% highlight python %}
+>>> from bson.code import Code
+>>> mapper = Code("""
+...               function () {
+...                 this.tags.forEach(function(z) {
+...                   emit(z, 1);
+...                 });
+...               }
+...               """)
+{% endhighlight %}
+
+Reduce 函数则负责累加计算所有已发射的键值，并把结果赋值给当前的键。
+
+{% highlight python %}
+>>> reducer = Code("""
+...                function (key, values) {
+...                  var total = 0;
+...                  for (var i = 0; i < values.length; i++) {
+...                    total += values[i];
+...                  }
+...                  return total;
+...                }
+...                """)
+{% endhighlight %}
+
+>注意：我们不能简单的返回 value.length，因为 reduce 函数可能在其他 reduce 过程中会被循环调用
+
+最后我们使用 map_reduce() 方法并得到迭代后的结果集。
+
+{% highlight python %}
+>>> result = db.things.map_reduce(mapper, reducer, "myresults")
+>>> for doc in result.find():
+...   print doc
+...
+{u'_id': u'cat', u'value': 3.0}
+{u'_id': u'dog', u'value': 2.0}
+{u'_id': u'mouse', u'value': 1.0}
+{% endhighlight %}
+
+# 高级 Map/Reduce
+PyMongo 的 API 支持所有 MongoDB map/reduce 引擎的功能。一个有意思的功能是通过对 map_reduce() 方法增加 full_response=True 参数，可以让我们在需要时获取更为详细的数据结果。和先前的区别在于，返回的结果会涵盖所有针对 map/reduce 操作的响应数据：
+
+{% highlight python %}
+>>> db.things.map_reduce(mapper, reducer, "myresults", full_response=True)
+{u'counts': {u'input': 4, u'reduce': 2, u'emit': 6, u'output': 3}, u'timeMillis': ..., u'ok': ..., u'result': u'...'}
+{% endhighlight %}
+
+PyMongo 同样支持所有其他可选的 map/reduce 参数，在下面的例子中我们使用了 query 参数来限制需要被处理数据的范围。
+
+{% highlight python %}
+>>> result = db.things.map_reduce(mapper, reducer, "myresults", query={"x": {"$lt": 2}})
+>>> for doc in result.find():
+...   print doc
+...
+{u'_id': u'cat', u'value': 1.0}
+{u'_id': u'dog', u'value': 1.0}
+{% endhighlight %}
+
+>这里可以跳转到完整的 [MongoDB's map reduce engine](http://www.mongodb.org/display/DOCS/MapReduce)
+
+#Group
+group() 方法提供了类似 SQL GROUP BY 的功能。相较于 map/reduce 更简单一些，你需要一个 group by 的键，一个聚合的初始值，和一个 reduce 函数。
+
+>注意：不要在 Sharded MongoDB 集群上使用，用 aggregation 或者 map/reduce 代替 group()
+
+这里我们做一个简单的 group 并计算 x 值出现的次数：
+
+{% highlight python %}
+>>> reducer = Code("""
+...                function(obj, prev){
+...                  prev.count++;
+...                }
+...                """)
+...
+>>> from bson.son import SON
+>>> results = db.things.group(key={"x":1}, condition={}, initial={"count": 0}, reduce=reducer)
+>>> for doc in results:
+...   print doc
+{u'count': 1.0, u'x': 1.0}
+{u'count': 2.0, u'x': 2.0}
+{u'count': 1.0, u'x': 3.0}
+{% endhighlight %}
+
+>这里可以跳转到完整的 [MongoDB's group method](http://www.mongodb.org/display/DOCS/Aggregation#Aggregation-Group)
