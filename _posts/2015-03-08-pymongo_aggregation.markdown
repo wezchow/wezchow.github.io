@@ -1,6 +1,6 @@
 ---
 layout:         post
-title:          "PyMongo Aggregation"
+title:          "PyMongo's Aggregation"
 date:           2015-03-08
 categories:     Python MongoDB
 tags:           PyMongo Python MongoDB
