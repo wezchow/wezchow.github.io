@@ -16,7 +16,7 @@ Map-reduce 是一种数据处理的范式，它专为大数据背景下的数据
 
 先来观察下面的 map-reduce 操作：
 
-<img src="~/assets/images/2015-03-09-mongodb_mapreduce.png" />
+<img src="http://wnono.com/assets/images/2015-03-09-mongodb_mapreduce.png" />
 
 在这个 map-reduce 操作中，MongoDB 对于每一个文档在输入阶段使用了 map 功能, 当然这里所指的文档是在满足查询条件的情况下。 依据不同的输入，Map 函数会弹射对应的键值对 (Key-value paris)。对于那些有多个值的键， MongoDB 则会进一步应用 reduce 功能，它主要是为收集和聚合数据服务。最后 MongoDB 会把结果保存在一个新的数据集中。除了这种操作，我们还可以把这个结果集重复使用在其他数据聚合的操作中。
 
