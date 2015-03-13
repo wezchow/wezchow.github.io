@@ -1,7 +1,7 @@
 ---
 layout:         post
 title:          "AngularJS - Services(Part-I)"
-date:           2015-03-13
+date:           2015-03-14
 categories:     AngularJS
 tags:           AngularJS
 image:          /assets/article_images/2014-11-30-mediator_features/night-track.JPG
