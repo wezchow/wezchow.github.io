@@ -195,4 +195,3 @@ app.controller('myFactoryCtrl', function() {
 在上面的 controller 中，我们注入了 'myFactory' 服务。接着利用 'myFactory' 所返回的数据来赋值给 $scope 对应的对象。如果你从来没有接触过 promises，这里会有一个小把戏。因为 callItunes 会返回一个 promise, 所以我们可以使用 .then() 方法在 promise 是一个完整合法数据的时候，赋值给 $scope.data.artistData。你会发现在这个例子中我们的 controller 非常瘦。所有逻辑和数据持久都放在了我们的 service 中。
 
 Too long, To be continue ...
-
