@@ -14,7 +14,7 @@ image:          /assets/article_images/2014-11-30-mediator_features/night-track.
 好吧，被逼无奈外加的确需要严肃对待这等严重问题。重新搞一遍吧，顺便写个 blog 把步骤理干净清晰了，给健忘的自己提个醒。
 
 ### 准备工作
-自己使用的是 Amazon Linux AMI, 属于 RHEL 的一个分支发行版，所以操作命令沿袭 RHEL 使用习惯。重新 launch 一个 instance 就不记录了，完全无脑 next next next ... 进入穿越至配置阶段。
+自己使用的是 Amazon Linux AMI, 属于 RHEL 的一个分支发行版，所以操作命令沿袭 RHEL 使用习惯。重新 launch 一个 instance 就不记录了，完全无脑 next next next ... 直接穿越至配置阶段。
 
 {% highlight bash %}
 # Install Git
