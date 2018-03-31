@@ -3,7 +3,7 @@ layout: post
 title:  "Hola 2015"
 date:   2015-02-07 14:34:25
 categories: 无题
-tags: featured
+tags:
 image: http://s.cn.bing.net/az/hprichbg/rb/DutchAntilles_ZH-CN12528903491_1920x1080.jpg
 ---
 
