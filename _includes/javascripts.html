@@ -4,7 +4,6 @@
 <script type="text/javascript" src="{{ "/assets/js/min/jquery.lazyload.min.js" | prepend: site.baseurl  }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/index.js" | prepend: site.baseurl  }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/readingTime.min.js" | prepend: site.baseurl  }}"></script>
-<script type="text/javascript" src="http://wsandbox.sinaapp.com/bingbg.js"></script>
 <script type="text/javascript" src="http://cdn.bootcss.com/mathjax/2.4.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
     MathJax.Hub.Config({
@@ -14,8 +13,6 @@
     (function ($) {
       "use strict";
       $(document).ready(function(){
-
-          //var bingBgURL = bingBgJSON.images[0].url;
           $('#bingBG').css('background-image', 'url(' + '"https://c1.staticflickr.com/9/8499/8338439169_660102b693_k.jpg"' + ')');
 
           $('div.teaserimage-image').lazyload({
