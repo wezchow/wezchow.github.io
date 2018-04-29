@@ -1,6 +1,6 @@
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rb-pygments
 
 # Site settings
 title: $$\sum_{i=1}^n ideology_i=\infty$$
@@ -87,5 +87,6 @@ menu:
 # Google Analytics (add the UA Code, e.g.: UA-xxxxxxxx-1)
 google_analytics: UA-59478649-1
 
-gems:
+plugins:
   - jekyll-sitemap
+  - jekyll-paginate
