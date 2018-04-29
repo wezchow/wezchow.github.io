@@ -13,5 +13,3 @@ image:          /assets/article_images/2014-11-30-mediator_features/night-track.
 决定不容易，谈话很愉快，其实有一点耐心，还是可以让你理解我的。
 
 <br/>
-
-> We destroy, we create and reshape, that is how we roll ...
